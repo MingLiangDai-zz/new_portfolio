@@ -1,0 +1,51 @@
+$shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.5);
+.card {
+  background-color: rgba(245, 245, 245, 0.2);
+  margin: 0.5rem;
+  padding: 0.75rem 0.75rem 4.5rem 0.75rem;
+  border-radius: 0.5rem;
+  box-shadow: $shadow;
+  position: relative;
+  box-sizing: border-box;
+
+  &-img {
+    width: 100%;
+    object-fit: center;
+  }
+
+  &-title {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  &-btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0;
+  }
+
+  &-btn,
+  &-btn-inverted {
+    color: rgb(245, 245, 245);
+    border: solid rgb(245, 245, 245) 1px;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    width: 50%;
+    margin: 0.5rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+
+  &-btn-inverted {
+    background-color: black;
+    border: none;
+  }
+}

@@ -1,0 +1,17 @@
+.header {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+}
+
+.btn {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  margin: 0 0.75rem;
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(118, 118, 118);
+    color: white;
+  }
+}

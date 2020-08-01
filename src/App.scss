@@ -1,0 +1,288 @@
+// @tailwind base;
+
+// @tailwind components;
+
+// @tailwind utilities;
+
+.App {
+  min-height: 100vh;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(0, 0, 0),
+    rgb(38, 34, 57)
+  );
+  // rgb(48, 33, 114),
+  // rgb(47, 181, 193)
+  box-sizing: border-box;
+  padding: 1rem 0;
+  z-index: -10;
+}
+
+.hero {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 80vh;
+  position: relative;
+
+  &-content {
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0 2rem;
+    height: 80%;
+    z-index: 10;
+    color: rgb(235, 235, 235);
+
+    .social-btn {
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        transform: scale(0.9);
+        &:after {
+          content: "";
+          position: absolute;
+          background: rgba(0, 0, 0, 0.1);
+          height: 3rem;
+          width: 3rem;
+          border-radius: 100%;
+        }
+      }
+      > img {
+        height: 3rem;
+        width: 3rem;
+      }
+    }
+  }
+
+  .blur {
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    position: absolute;
+
+    &:before {
+      display: block;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      box-shadow: inset 0px 0px 10rem 3rem rgb(0, 0, 0);
+    }
+    #bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.contact-btn {
+  background: none;
+  border: solid white 1px;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  width: 25%;
+  margin: 1rem 1rem 0 1rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+  &:hover {
+    color: rgb(220, 220, 220);
+    border-color: rgb(220, 220, 220);
+    transform: scale(0.9);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.button {
+  display: inline-block;
+  height: 2.75em;
+  line-height: 2.7em;
+  padding: 0 1.5em 0 1.5em;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  border: solid 1px rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  white-space: nowrap;
+  background-color: rgb(255, 255, 255);
+  transition: all ease-in 0.1s;
+  &:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    transform: scale(0.95);
+  }
+}
+
+.section {
+  margin: 0.5rem 0;
+  &-title {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.icon {
+  // border: red double 5px;
+  display: inline-block;
+  border-radius: 100%;
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+  overflow: hidden;
+  &-context {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+//Shooting Star
+
+.sky-container {
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    circle,
+    rgb(150, 150, 150) 10%,
+    rgba(0, 0, 0, 0) 13%
+  );
+
+  position: fixed;
+  transform: rotateZ(135deg);
+  border-radius: 100%;
+}
+
+.star {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  height: 2px;
+  background: linear-gradient(-45deg, rgb(69, 224, 242), rgba(0, 0, 255, 0));
+  filter: drop-shadow(0 0 6px rgb(69, 224, 242));
+  animation: tail 6000ms ease-in-out infinite,
+    shooting 6000ms ease-in-out infinite;
+}
+
+.star::before,
+.star::after {
+  position: absolute;
+  content: "";
+  top: calc(50% - 1px);
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    -45deg,
+    rgba(0, 0, 255, 0),
+    rgb(69, 224, 242),
+    rgba(0, 0, 255, 0)
+  );
+  border-radius: 100%;
+  transform: translateX(50%) rotateZ(45deg);
+  animation: shining 3000ms ease-in-out infinite;
+}
+
+.star::after {
+  transform: translateX(50%) rotateZ(-45deg);
+}
+
+.star:nth-child(1) {
+  top: calc(50% - 200px);
+  left: calc(50% - 300px);
+  animation-delay: 650ms;
+}
+.star:nth-child(1)::before,
+.star:nth-child(1)::after {
+  animation-delay: 650ms;
+}
+
+.star:nth-child(2) {
+  top: calc(50% - -50px);
+  left: calc(50% - 190px);
+  animation-delay: 150ms;
+}
+.star:nth-child(2)::before,
+.star:nth-child(2)::after {
+  animation-delay: 150ms;
+}
+
+.star:nth-child(3) {
+  top: calc(50% - -90px);
+  left: calc(50% - 200px);
+  animation-delay: 1600ms;
+}
+.star:nth-child(3)::before,
+.star:nth-child(3)::after {
+  animation-delay: 1600ms;
+}
+
+.star:nth-child(4) {
+  top: calc(50% - 50px);
+  left: calc(50% - 250px);
+  animation-delay: 4700ms;
+}
+.star:nth-child(4)::before,
+.star:nth-child(4)::after {
+  animation-delay: 4700ms;
+}
+
+.star:nth-child(5) {
+  top: calc(50% - -190px);
+  left: calc(50% - 200px);
+  animation-delay: 2100ms;
+}
+.star:nth-child(5)::before,
+.star:nth-child(5)::after {
+  animation-delay: 2100ms;
+}
+
+/* Animations */
+@keyframes tail {
+  0% {
+    width: 0;
+  }
+
+  30% {
+    width: 100px;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes shining {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 30px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes shooting {
+  0% {
+    transform: translateX(-10vw);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
