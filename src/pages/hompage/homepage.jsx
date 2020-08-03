@@ -50,7 +50,7 @@ const Home = () => {
       <div className="section">
         <h3 className="section-title">Experience</h3>
         <div className="card-container">
-          <Card title="Front-end Developer at MEGAComfort"></Card>
+          <Card title="Front-end Developer at MEGAComfort">June 2020 - Present</Card>
         </div>
       </div>
     </div>
