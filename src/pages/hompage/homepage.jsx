@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./homepage.scss";
 import Card from "../../components/card/card";
 
-import icon from "../../assets/images/University_of_Waterloo_seal.svg.png";
 import lol from "../../assets/images/lol.png";
 import pixel from "../../assets/images/pixel.png";
 import ecom from "../../assets/images/ecom.jpg";
@@ -36,21 +35,19 @@ const Home = () => {
     <div>
       <div className="section">
         <h3 className="section-title">Education</h3>
-        <div className="col">
-          <div className="col-text">
-            My name is Ming Liang Dai and I am studying computer engineering at
-            the University of Waterloo. I am currently in 2nd year and I hope to
-            pursue a career in software development.
-          </div>
-          <div className="icon">
-            <img src={icon} alt="Icon" className="icon-context" />
-          </div>
-        </div>
+        <Card title="University of Waterloo">
+          <h4 style={{ margin: "0 0 0.75rem 0" }}>September 2019 - Present</h4>
+          My name is Ming Liang Dai and I am studying computer engineering at
+          the University of Waterloo. I am currently in 2nd year and I hope to
+          pursue a career in software development.
+        </Card>
       </div>
       <div className="section">
         <h3 className="section-title">Experience</h3>
         <div className="card-container">
-          <Card title="Front-end Developer at MEGAComfort">June 2020 - Present</Card>
+          <Card title="Front-end Developer at MEGAComfort">
+            <h4 style={{ margin: "0 0 0.75rem 0" }}>June 2020 - Present</h4>
+          </Card>
         </div>
       </div>
     </div>

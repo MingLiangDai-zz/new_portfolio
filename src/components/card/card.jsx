@@ -4,13 +4,16 @@ import "./card.scss";
 export class Card extends Component {
   render() {
     return (
-      <div className="card">
+      <div className={`card ${this.props.btnUrl && "extended"}`}>
         <h3 className="card-title">{this.props.title}</h3>
-        <img
-          className="card-img"
-          src={this.props.imgUrl}
-          alt={this.props.imageUrl}
-        />
+
+        {this.props.imgUrl && (
+          <img
+            className="card-img"
+            src={this.props.imgUrl}
+            alt={this.props.imgUrl}
+          />
+        )}
         <div className="card-body">
           {this.props.children}
 

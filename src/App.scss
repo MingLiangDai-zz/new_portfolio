@@ -1,4 +1,5 @@
 .App {
+  font-family: "Roboto", sans-serif;
   min-height: 100vh;
   height: 100%;
   background-image: linear-gradient(
@@ -10,7 +11,10 @@
   // rgb(47, 181, 193)
   box-sizing: border-box;
   padding: 1rem 0;
-  z-index: -10;
+
+  .fg {
+    z-index: 10;
+  }
 }
 
 .hero {
@@ -18,7 +22,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   height: 80vh;
   position: relative;
 
@@ -26,7 +29,7 @@
     box-sizing: border-box;
     text-align: center;
     padding: 0 2rem;
-    height: 80%;
+    height: 70%;
     z-index: 10;
     color: rgb(235, 235, 235);
 
@@ -59,7 +62,6 @@
   .blur {
     height: 100%;
     width: 100%;
-    z-index: 0;
     position: absolute;
 
     &:before {
@@ -155,15 +157,12 @@ a {
     rgb(150, 150, 150) 10%,
     rgba(0, 0, 0, 0) 13%
   );
-
   position: fixed;
   transform: rotateZ(135deg);
-  border-radius: 100%;
 }
 
 .star {
   position: absolute;
-  z-index: 0;
   top: 50%;
   left: 50%;
   height: 2px;
