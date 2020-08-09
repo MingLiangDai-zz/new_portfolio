@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./homepage.scss";
 import Card from "../../components/card/card";
+import Tracker from "../../components/tracker/tracker";
 
 import lol from "../../assets/images/lol.png";
 import pixel from "../../assets/images/pixel.png";
@@ -16,14 +17,14 @@ export class Container extends Component {
       context = <Home />;
     } else if (this.props.active === "Projects") {
       context = <Projects />;
-    } else if (this.props.active === "The Fun Stuff") {
-      context = <Fun />;
     }
     return (
       <div className="center">
         <div className="wrapper">
           <div className="wrapper-header">{this.props.children}</div>
-          <div className="wrapper-body">{context}</div>
+          <div className="wrapper-body">
+            {context} <Tracker current_page={this.props.active} />
+          </div>
         </div>
       </div>
     );
@@ -130,10 +131,6 @@ const Projects = () => {
       </div>
     </div>
   );
-};
-
-const Fun = () => {
-  return <div> Coming Soon</div>;
 };
 
 export default Container;

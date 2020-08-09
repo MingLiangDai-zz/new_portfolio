@@ -6,15 +6,21 @@ export class Header extends Component {
     return (
       <div>
         <div className="header">
-          {this.props.links.map((link) => (
-            <div
-              className="btn"
-              key={link}
-              onClick={(e) => this.props.handleClick(e.target.textContent)}
-            >
-              {link}
-            </div>
-          ))}
+          <div className="btn" onClick={(e) => this.props.handleClick("Home")}>
+            Home
+          </div>
+          <div
+            className="btn"
+            onClick={(e) => this.props.handleClick("Projects")}
+          >
+            Projects
+          </div>
+          <div
+            className="btn"
+            onClick={(e) => this.props.handleClick("The Fun Stuff")}
+          >
+            The Fun Stuff
+          </div>
         </div>
       </div>
     );

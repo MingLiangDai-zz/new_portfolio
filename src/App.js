@@ -3,7 +3,6 @@ import "./App.scss";
 
 import Container from "./pages/hompage/homepage";
 import Header from "./components/header/header";
-// import Tracker from "./components/tracker/tracker";
 
 import bg from "./assets/images/bg.gif";
 import linkedin from "./assets/images/linkedin.png";
@@ -60,7 +59,6 @@ const App = () => {
       </div>
       <Container active={state.page}>
         <Header
-          links={["Home", "Projects", "The Fun Stuff"]}
           handleClick={(active) => setState({ ...state, page: active })}
         ></Header>
       </Container>
